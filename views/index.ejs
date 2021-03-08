@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+<h1>Index page</h1>
+<div class="list-group px-3">
+    <% clucks.forEach(({ id, content,image_url, username, created_at })=> { %>
+    <div class="card mb-2">
+      <div class="container ms-0 mt-2">
+        <img src="./images/rooster.jpg" class="rounded-circle"" width="75" height="75" alt="...">
+        <h5 style="display:inline;"class="card-title"><%= username %></h5>
+        <h5 style="display:inline;"class="card-title ms-3"><%= created_at%></h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text mt-2 mb-2"> <%=content%></p>
+        <% if(image_url) {%> 
+        <img src="<%=image_url %>" class="rounded-circle"" width="75" height="75" alt="...">
+        <% } %> 
+      </div>
+    </div>
+  <% }) %>
+</div>
+<%- include('./partials/footer') %> 

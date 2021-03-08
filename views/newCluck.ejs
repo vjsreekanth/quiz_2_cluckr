@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<div class="mt-2 px-3">
+    <form action="/clucks" method="POST">
+      <div class="mb-3">
+        <label name ='content' for="justify-content-md-end" class="form-label">Content</label>
+        <textarea name ='content' class="form-control" id="content" placeholder="Whatchoo cluckin' 'bout?'" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="image_url" class="form-label">Image Url</label>
+        <input name ='image_url' type="text" class="form-control" id="image_url" placeholder="Your image Url">
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-outline-primary me-md-2">Cluck!</button>
+      </div>
+    </form>
+  </div>
+
+  <%- include('./partials/footer') %>
