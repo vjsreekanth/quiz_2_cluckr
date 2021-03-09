@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Bootstrap is now served from the "public" directory -->
+  <!-- The "defer" attribute waits for the document to load before running JS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <script defer src="/js/bootstrap.min.js"></script>
+
+  <title>Express Basics</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+      <img src="./images/chicken.jpg"alt="cluck logo" href="/clucks" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 position-absolute top-1 end-0">
+          
+          
+            <% if (username) { %>
+              <li class="nav-item position-absolute top-0 end-1">
+                <a href="/newCluck" id ="clunk" class="btn btn-secondary me-2 px-3">Cluck!</a>
+              </li>
+              <li class="nav-item"></li>
+              <span class="me-3"><%= username %> </span>
+              </li>
+              <form class="d-flex" action="/sign_out" method="POST">
+                <input class="btn btn-danger" type="submit" value="Sign Out">
+              </form>
+              <% } else { %>
+                <li class="nav-item me-2">
+                  <a href="/newCluck" id ="clunk" class="btn btn-secondary me-2 px-3 disabled">Cluck!</a>
+                </li>
+          
+              <form class="d-flex" action="/sign_in" method="POST">
+                  <input class="btn btn-success" type="submit" value="Sign In">
+                </form>
+          
+          <% } %>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="container">
